@@ -1,5 +1,5 @@
 def crearDiccionario (nombres,notas_1,notas_2):
-    nombres = list(map(lambda x: x.replace("\n","").replace("'","").strip(" "), nombres.split(",")))
+    nombres = map(lambda x: x.replace("\n","").replace("'","").strip(" "), nombres.split(","))
     return {nombre: (nota1,nota2) for nombre, nota1, nota2 in zip(nombres,notas_1,notas_2)}
 def sacarPromedioAlumnos (notasAlumnos):
     return dict((dato[0],(dato[1][0]+dato[1][1])/2) for dato in notasAlumnos.items())
